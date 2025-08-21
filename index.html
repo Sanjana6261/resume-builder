@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Resume Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Interactive Resume Builder</h1>
+  <div class="progress-container">
+    <div id="progressBar"></div>
+  </div>
+
+  <div class="container">
+    <!-- Form Section -->
+    <form id="resumeForm">
+      <label>Name:</label>
+      <input type="text" id="name" placeholder="Enter your name">
+
+      <label>Email:</label>
+      <input type="email" id="email" placeholder="Enter your email">
+
+      <label>Phone:</label>
+      <input type="text" id="phone" placeholder="Enter your phone number">
+
+      <label>Profile Summary:</label>
+      <textarea id="summary" rows="3" placeholder="Write a short profile summary"></textarea>
+
+      <!-- Education -->
+      <label>Education:</label>
+      <div id="educationContainer">
+        <input type="text" class="education" placeholder="e.g. B.Tech in CSE, 2025">
+      </div>
+      <button type="button" onclick="addEducation()">+ Add More Education</button>
+
+      <!-- Experience -->
+      <label>Experience:</label>
+      <div id="experienceContainer">
+        <input type="text" class="experience" placeholder="e.g. Web Developer Intern - ABC Company">
+      </div>
+      <button type="button" onclick="addExperience()">+ Add More Experience</button>
+
+      <!-- Skills -->
+      <label>Skills:</label>
+      <div id="skillsContainer">
+        <label><input type="checkbox" value="HTML"> HTML</label>
+        <label><input type="checkbox" value="CSS"> CSS</label>
+        <label><input type="checkbox" value="JavaScript"> JavaScript</label>
+        <label><input type="checkbox" value="Python"> Python</label>
+        <label><input type="checkbox" value="Java"> Java</label>
+      </div>
+
+      <button type="button" onclick="clearForm()">Clear Form</button>
+      <button type="button" onclick="downloadPDF()">Download PDF</button>
+    </form>
+
+    <!-- Resume Preview Section -->
+    <div class="resume-preview" id="resumePreview">
+      <h2 id="pName">Your Name</h2>
+      <p><b>Email:</b> <span id="pEmail">your@email.com</span></p>
+      <p><b>Phone:</b> <span id="pPhone">1234567890</span></p>
+
+      <h3>Profile Summary</h3>
+      <p id="pSummary">Your summary will appear here...</p>
+
+      <h3>Education</h3>
+      <ul id="pEducation"><li>Your education will appear here...</li></ul>
+
+      <h3>Experience</h3>
+      <ul id="pExperience"><li>Your experience will appear here...</li></ul>
+
+      <h3>Skills</h3>
+      <ul id="pSkills"><li>Your skills will appear here...</li></ul>
+    </div>
+  </div>
+
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
